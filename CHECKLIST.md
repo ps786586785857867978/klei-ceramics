@@ -16,7 +16,7 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 
 ## 2. Responsive
 
-- [ ] Drag the window from 320 to 1920: nothing breaks, overlaps or jumps
+- [x] Drag the window from 320 to 1920: nothing breaks, overlaps or jumps
 - [ ] No horizontal scroll at any width
 - [x] Tablet (768) follows the documented two-column workshop decision
 - [x] Tested on your own phone, portrait and landscape
@@ -75,10 +75,10 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 ## 8. Usability
 
 - [x] Keyboard: menu, FAQ and email have native operation and explicit `:focus-visible`
-- [ ] The email field: a label, a clear error message, a clear success state
+- [x] The email field: a label, a clear error message, a clear success state
 - [ ] Every link goes somewhere (or is clearly not a link)
 - [x] Lighthouse Accessibility, Best Practices and SEO ≥ 95 — proof: [lighthouse-mobile.png](proof/lighthouse-mobile.png)
-- [ ] Someone else tested it on their phone, and you fixed what they found
+- [x] Someone else tested it on their phone, and you fixed what they found
 
 > *Ask Codex:* Walk through the page with the keyboard only, using the Playwright MCP. Report every place where focus is invisible, trapped or lost.
 
