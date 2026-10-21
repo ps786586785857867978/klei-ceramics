@@ -44,7 +44,7 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 
 ## 5. Loading
 
-- [ ] Lighthouse Performance ≥ 90 (on the live URL, mobile)
+- [x] Lighthouse Performance ≥ 90 (on the live URL, mobile) — proof: [lighthouse-mobile.png](proof/lighthouse-mobile.png)
 - [ ] No layout shift while loading: images and fonts have reserved space
 - [x] Fonts: `preconnect` + `display=swap`
 - [x] Below-the-fold studio illustration: `loading="lazy"`
