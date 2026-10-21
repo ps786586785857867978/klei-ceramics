@@ -1,7 +1,7 @@
 import './styles/tokens.css';
 import './styles/style.css';
 
-const measurementId = 'G-XXXXXXXXXX';
+const measurementId = 'G-PLCG59TYC5';
 const consentKey = 'klei-analytics-consent';
 const banner = document.querySelector('[data-cookie-banner]');
 const menuButton = document.querySelector('.menu-toggle');
