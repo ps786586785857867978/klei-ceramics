@@ -77,7 +77,7 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 - [x] Keyboard: menu, FAQ and email have native operation and explicit `:focus-visible`
 - [ ] The email field: a label, a clear error message, a clear success state
 - [ ] Every link goes somewhere (or is clearly not a link)
-- [ ] Lighthouse Accessibility, Best Practices and SEO ≥ 95
+- [x] Lighthouse Accessibility, Best Practices and SEO ≥ 95 — proof: [lighthouse-mobile.png](proof/lighthouse-mobile.png)
 - [ ] Someone else tested it on their phone, and you fixed what they found
 
 > *Ask Codex:* Walk through the page with the keyboard only, using the Playwright MCP. Report every place where focus is invisible, trapped or lost.
