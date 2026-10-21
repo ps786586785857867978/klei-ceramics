@@ -1,27 +1,33 @@
 # Klei — ceramics workshops in Mechelen
 
-Live URL: **pending GitHub authentication and deployment**
+Live URL: **https://ps786586785857867978.github.io/klei-ceramics/**
 
 ## Run locally
 
 ```bash
 npm install
-npx playwright install chromium
 npm run dev
 ```
 
-## Analytics choice
+## Deploy
 
-Google Analytics 4 provides a generous free tier, familiar reporting and direct Google Ads integration, but it is complex and sends visitor data to Google. Plausible is a privacy-first alternative with a much simpler dashboard and no cookie banner in its default configuration, but it is paid and offers less granular reporting. This project uses GA4 with Consent Mode v2: every storage category is denied by default, the analytics script is only added after acceptance, and a refusal is remembered in local storage.
+GitHub Pages serves the built site from the `docs` folder on `main`. After any change:
 
-Set `measurementId` in `src/main.js` to the studio's real `G-...` ID before launch; the placeholder deliberately prevents accidental tracking during development.
+```bash
+npx vite build --outDir docs --emptyOutDir
+git add -A && git commit -m "Update site" && git push
+```
+
+## Analytics choice: GA4 vs Plausible
+
+GA4 is free, has deep reporting and integrates with Google Ads, but it is complex to configure and sends visitor data to Google, which makes a consent banner necessary. Plausible is lightweight, privacy-first and needs no cookie banner by default, but it is paid and offers less detailed reporting. This project uses GA4 with Consent Mode v2: everything is denied by default, the Google script is only loaded after the visitor accepts, and their choice is remembered in local storage.
 
 ## Three things AI got wrong — and the fixes
 
-1. The first draft would have used a generic desktop layout on tablet; the final 768px decision uses two workshop columns with a full-width third card.
-2. It initially treated visual motion as decoration; the final implementation limits it to opacity and transform and fully respects `prefers-reduced-motion`.
-3. It first assumed an email endpoint existed; the finished form instead makes its local-only confirmation explicit, avoiding a misleading promise.
+1. **GA4 loaded but sent no data.** The generated loader defined `gtag` as an arrow function pushing an array into `dataLayer`. Google's script only understands the `arguments` object, so the tag was detected but Realtime stayed at zero. I fixed it by defining `gtag` as a normal function that pushes `arguments`, and confirmed a `collect` request returning 204 plus my visit in Realtime.
+2. **Broken share preview.** The Open Graph tags pointed to a made-up domain (`klei-ceramics.github.io/klei-starter`) and used an SVG image, which social platforms do not render. opengraph.xyz showed a broken image. I fixed the URLs, added a 1200×630 PNG, and added `twitter:card`, `og:site_name` and the Twitter tags.
+3. **Deployment left half-finished.** `vite.config.js` was never committed, nothing was built for GitHub Pages, and the README still said the live URL was pending. I committed the config, published the build from `docs`, and set Pages to serve `main` / `docs`.
 
-## Verification
+## Proof
 
-`npm run build` passes. Playwright installation and browser launch are documented in `CHECKLIST.md`; run `npm test` and `npx playwright test --update-snapshots` after Chromium is available in the local desktop session.
+Screenshots, Lighthouse scores and the share preview are in [`proof/`](proof/) and linked from `CHECKLIST.md`.

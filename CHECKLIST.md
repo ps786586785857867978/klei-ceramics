@@ -55,20 +55,20 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 ## 6. Meta & sharing
 
 - [x] Specific `<title>` and `<meta name="description">`
-- [x] Open Graph title, description, image and URL metadata supplied (update absolute domain after deployment)
+- [x] Open Graph title, description, image and URL metadata supplied
 - [x] SVG favicon and `theme-color`
 - [x] `<html lang="en">`
-- [ ] Share preview tested: paste the live URL in WhatsApp, Slack or [opengraph.xyz](https://www.opengraph.xyz/)
+- [x] Share preview tested: paste the live URL in WhatsApp, Slack or [opengraph.xyz](https://www.opengraph.xyz/) — proof: [share-preview.png](proof/share-preview.png)
 
 > *Ask Codex:* Audit the head of index.html for SEO and social sharing. What is missing or generic?
 
 ## 7. Analytics
 
-- [ ] Google Analytics 4 installed, with your own Measurement ID
+- [x] Google Analytics 4 installed, with your own Measurement ID — proof: [before consent](proof/ga4-before-consent.png), [after accept](proof/ga4-after-accept.png), [after decline](proof/ga4-after-decline.png)
 - [x] Cookie banner prevents analytics loading before acceptance
 - [x] Refusal and acceptance are remembered locally
-- [ ] You see your own visit in GA4 → Realtime
-- [ ] In `README.md`: GA4 vs one alternative, pros and cons, 3 sentences
+- [x] You see your own visit in GA4 → Realtime — proof: [ga4-realtime.png](proof/ga4-realtime.png)
+- [x] In `README.md`: GA4 vs one alternative, pros and cons, 3 sentences
 
 > *Ask Codex:* Add Google Analytics 4 behind a cookie consent banner, with Consent Mode v2: denied by default, granted only after accepting. Explain every line you add.
 
@@ -81,3 +81,20 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 - [ ] Someone else tested it on their phone, and you fixed what they found
 
 > *Ask Codex:* Walk through the page with the keyboard only, using the Playwright MCP. Report every place where focus is invisible, trapped or lost.
+
+## Proof
+
+Responsive screenshots:
+
+![375px](proof/screenshot-375.png)
+![768px](proof/screenshot-768.png)
+![1440px](proof/screenshot-1440.png)
+
+Lighthouse (live URL):
+
+![Lighthouse mobile](proof/lighthouse-mobile.png)
+![Lighthouse desktop](proof/lighthouse-desktop.png)
+
+Share preview:
+
+![Share preview](proof/share-preview.png)
