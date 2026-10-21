@@ -19,7 +19,7 @@ Under every category: a prompt to let Codex audit it first. It reports, you deci
 - [ ] Drag the window from 320 to 1920: nothing breaks, overlaps or jumps
 - [ ] No horizontal scroll at any width
 - [x] Tablet (768) follows the documented two-column workshop decision
-- [ ] Tested on your own phone, portrait and landscape
+- [x] Tested on your own phone, portrait and landscape
 
 > *Ask Codex:* Check the page at 320, 375, 768, 1024, 1440 and 1920px. Report every overflow, overlap or awkward wrap, with the width where it happens.
 
